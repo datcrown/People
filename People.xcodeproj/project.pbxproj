@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		5F1A18C21FEA520B008ACD30 /* CallInComingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F1A18C11FEA520B008ACD30 /* CallInComingViewController.swift */; };
 		5F3D815F1FDFBF16004CC1F7 /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F3D815E1FDFBF16004CC1F7 /* MessageTableViewCell.swift */; };
+		5F4F0E5620187FFD00A62508 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5F4F0E5520187FFD00A62508 /* GoogleService-Info.plist */; };
+		5F4F0E58201881B200A62508 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4F0E57201881B200A62508 /* LoginViewController.swift */; };
 		5F5A6A821FE36A9200020FF0 /* BubbleChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5A6A811FE36A9200020FF0 /* BubbleChat.swift */; };
 		5F5C42F21FE8C57D00DE777D /* NewsFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5C42F11FE8C57D00DE777D /* NewsFeedViewController.swift */; };
 		5F5C42F61FE8CD1F00DE777D /* NewsFeedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5C42F51FE8CD1F00DE777D /* NewsFeedCollectionViewCell.swift */; };
@@ -33,6 +35,8 @@
 		3FCBAE30AD1DBA7CAEE5B512 /* Pods_People.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_People.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F1A18C11FEA520B008ACD30 /* CallInComingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallInComingViewController.swift; sourceTree = "<group>"; };
 		5F3D815E1FDFBF16004CC1F7 /* MessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
+		5F4F0E5520187FFD00A62508 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		5F4F0E57201881B200A62508 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		5F5A6A811FE36A9200020FF0 /* BubbleChat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleChat.swift; sourceTree = "<group>"; };
 		5F5C42F11FE8C57D00DE777D /* NewsFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeedViewController.swift; sourceTree = "<group>"; };
 		5F5C42F51FE8CD1F00DE777D /* NewsFeedCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeedCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -107,6 +111,7 @@
 				5FB635991FDF75A3005812F3 /* AppDelegate.swift */,
 				5F6D04431FE1117600BE7965 /* Extention.swift */,
 				5FB635A01FDF75A3005812F3 /* Assets.xcassets */,
+				5F4F0E5520187FFD00A62508 /* GoogleService-Info.plist */,
 				5FB6359D1FDF75A3005812F3 /* Main.storyboard */,
 			);
 			path = "Support File";
@@ -115,6 +120,7 @@
 		5F1A18C71FEA5F74008ACD30 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				5F4F0E59201881C000A62508 /* Login */,
 				5F1A18C81FEA5FAD008ACD30 /* TimeLine */,
 				5F1A18C31FEA5E2B008ACD30 /* Video Call */,
 				5F1A18C41FEA5EDE008ACD30 /* Chat */,
@@ -129,6 +135,14 @@
 				5F5C42F51FE8CD1F00DE777D /* NewsFeedCollectionViewCell.swift */,
 			);
 			path = TimeLine;
+			sourceTree = "<group>";
+		};
+		5F4F0E59201881C000A62508 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				5F4F0E57201881B200A62508 /* LoginViewController.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 		5FB6358D1FDF75A3005812F3 = {
@@ -241,6 +255,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5FB635A41FDF75A3005812F3 /* LaunchScreen.storyboard in Resources */,
+				5F4F0E5620187FFD00A62508 /* GoogleService-Info.plist in Resources */,
 				5FB635A11FDF75A3005812F3 /* Assets.xcassets in Resources */,
 				5FB6359F1FDF75A3005812F3 /* Main.storyboard in Resources */,
 			);
@@ -273,9 +288,12 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-People/Pods-People-resources.sh",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -291,23 +309,25 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-People/Pods-People-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/CodableAlamofire/CodableAlamofire.framework",
-				"${PODS_ROOT}/GoogleWebRTC/Frameworks/frameworks/WebRTC.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/KMPlaceholderTextView/KMPlaceholderTextView.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
-				"${BUILT_PRODUCTS_DIR}/Socket.IO-Client-Swift/SocketIO.framework",
-				"${BUILT_PRODUCTS_DIR}/Starscream/Starscream.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftSocket/SwiftSocket.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CodableAlamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WebRTC.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KMPlaceholderTextView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SocketIO.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Starscream.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftSocket.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -334,6 +354,7 @@
 				5F6D04441FE1117600BE7965 /* Extention.swift in Sources */,
 				5F5C42F61FE8CD1F00DE777D /* NewsFeedCollectionViewCell.swift in Sources */,
 				5F3D815F1FDFBF16004CC1F7 /* MessageTableViewCell.swift in Sources */,
+				5F4F0E58201881B200A62508 /* LoginViewController.swift in Sources */,
 				5FEB1D081FEA6DDB005ABD4D /* VideoCallManger.swift in Sources */,
 				5F1A18C21FEA520B008ACD30 /* CallInComingViewController.swift in Sources */,
 				5F5C42F21FE8C57D00DE777D /* NewsFeedViewController.swift in Sources */,

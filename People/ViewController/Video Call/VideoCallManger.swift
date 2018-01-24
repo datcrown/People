@@ -7,11 +7,4 @@
 //
 
 import Foundation
-import WebRTC
 
-class VideoService {
-    func webrtc() {
-        
-        print(RTCInitializeSSL())
-    }
-}

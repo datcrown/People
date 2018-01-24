@@ -23,7 +23,6 @@ class VideoCallViewController: UIViewController {
         setupCaptureSession()
         setupPreviewLayer()
         startingRunningCaptureSession()
-        VideoService().webrtc()
     }
     
     override func didReceiveMemoryWarning() {

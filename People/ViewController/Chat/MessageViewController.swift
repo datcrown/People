@@ -93,16 +93,6 @@ class MessageViewController: UIViewController,UITextViewDelegate, UITableViewDat
 
   
     @IBAction func sendMessage(sender: UIButton) {
-        let socket = AppDelegate.socket
-        print(messageTextView.text)
-        switch  socket.send(string: messageTextView.text) {
-        case .success:
-            print("1")
-            let data = socket.read(1024*10)
-            print(data )
-        case .failure(let error):
-            print(error)
-        }
     }
     
     
