@@ -9,30 +9,37 @@
 import UIKit
 
 class MessageViewController: UIViewController,UITextViewDelegate, UITableViewDataSource, UITableViewDelegate {
-    
+    var numberPeople: Int? = 0
+
     @IBOutlet var sendMessageBT: UIButton!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var bottomOfMessageViewConstraint: NSLayoutConstraint!
     @IBOutlet weak var messageTextView: UITextView!
     @IBOutlet weak var messageTableView: UITableView!
-    var chatHistory = DataService.shared.chatHistory?.data
+    var chatHistory = DataService.shared.data?.room[DataService.shared.indexOfPeople!]?.message
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        DataService.shared.getChatHistory(from: DataService.shared.frd_idAtIndexOfPeopleAtTBV!)
+        chatHistory?.reverse()
+
+        tableView.delegate = self
+  //       DataService.shared.getChatHistory()
         NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardNotification), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardNotification), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(updateData), name: getChatHistoryNotiKey, object: nil)
-        navigationItem.title = DataService.shared.listChat?.data[DataService.shared.indexOfPeople!].frd_name
+        navigationItem.title = DataService.shared.data?.room[DataService.shared.indexOfPeople!]?.frd_name
         
     }
     
     func scrollToLastMessage() {
+        guard chatHistory?.count != nil else {return}
         if chatHistory?.count != 0 {
             UIView.animate(withDuration: 0, delay: 0, options: UIViewAnimationOptions.curveEaseOut, animations: {
                 self.view.layoutIfNeeded()
             }, completion: { (completed) in
-                let indexPath = IndexPath(item: (self.chatHistory?.count)! - 1 , section: 0)
-                self.messageTableView.scrollToRow(at: indexPath , at: .bottom, animated: true)
+                if self.chatHistory?.count != 0 {
+                    let indexPath = IndexPath(item: (self.chatHistory?.count)! - 1 , section: 0)
+                    self.messageTableView.scrollToRow(at: indexPath , at: .bottom, animated: true)
+                }
             })
         }
     }
@@ -83,15 +90,10 @@ class MessageViewController: UIViewController,UITextViewDelegate, UITableViewDat
     }
     
     @objc func updateData() {
-        chatHistory = DataService.shared.chatHistory?.data
-        chatHistory?.reverse()
+        chatHistory = DataService.shared.data?.room[DataService.shared.indexOfPeople!]?.message
         tableView.reloadData()
-        
         scrollToLastMessage()
     }
-    
-
-  
     @IBAction func sendMessage(sender: UIButton) {
     }
     

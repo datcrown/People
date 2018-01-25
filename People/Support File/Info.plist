@@ -23,9 +23,21 @@
 		<dict>
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>REVERSED_CLIENT_ID</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>com.googleusercontent.apps.446374069466-l1eolku518je5ofs4ditrfk18uca4iea</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>DATABASE_URL</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>https://fir-training-9ffe9.firebaseio.com</string>
 			</array>
 		</dict>
 	</array>

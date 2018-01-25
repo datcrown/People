@@ -8,95 +8,89 @@
 import Foundation
 import Alamofire
 import CodableAlamofire
+import Firebase
+import CodableFirebase
+
 let getListChatNotiKey = Notification.Name.init("getListChat")
 let getAvaImageNotiKey = Notification.Name.init("downloadImage")
 let getChatHistoryNotiKey = Notification.Name.init("getHistoryChat")
-let token = "5c5a1c9b-3db0-4e5f-99cc-37333821a05e"
 class DataService {
     static let shared: DataService = DataService()
-    var frd_idAtIndexOfPeopleAtTBV: String?
+    var indexOfPeopleAtTBV: Int?
     var indexOfPeople: Int?
-    
-    // MARK: - Get Token
-    private var _token: Token?
-    
-    
-    
-    // MARK: - Get List Chat
-    private var _listChat: ListChat?
-    var listChat: ListChat? {
+    var ref: DatabaseReference?
+    var refHandle:  UInt!
+
+    private var _data: data1?
+    var data: data1? {
         get {
-            if _listChat == nil {
+            if _data == nil {
             }
-            return _listChat
+            return _data
         } set {
-            _listChat = newValue
+            _data = newValue
         }
     }
     
     func getListChat() {
-        let parameters: Parameters = ["api":"list_conversation",
-                                      "time_stamp":"",
-                                      "take":24,
-                                      "token":"\(token)"
-        ]
-        requestApi(parameters: parameters, customClass: self._listChat) { (data) in
-            self._listChat = data.result.value as? ListChat
-            NotificationCenter.default.post(name: getListChatNotiKey, object: nil )
-        }
-        
-        
+       requestApi()
     }
     
-    // MARK: - Get Chat History
-    private var _chatHistory: ChatHistory?
-    var chatHistory: ChatHistory? {
-        get {
-            if _chatHistory == nil {
-            }
-            return _chatHistory
-        } set {
-            _chatHistory = newValue
-        }
-    }
-    func getChatHistory(from frd_id: String)  {
-        
-        let parameters: Parameters = [  "api":"add_cmt_version_2",
-                                        "buzz_id":"5a0d57c1e4b074e3adf224ea",
-                                        "cmt_val":"SBX",
-                                        "token":"4d964c7c-e5a3-4919-b17a-7243464d5007"
-        ]
-       
-        requestApi(parameters: parameters, customClass: self._chatHistory) { (data) in
-            self._chatHistory = data.result.value as? ChatHistory
-            NotificationCenter.default.post(name: getChatHistoryNotiKey, object: nil )
-        }
-        
-        
+
+    func getChatHistory()  {
+        requestApi()
     }
     
     
-    func requestApi<T:Codable> (parameters: Parameters?, customClass:T, success: @escaping (DataResponse<T>) -> Void) {
-        
-        Alamofire.request("http://202.32.203.168:9119", method: .post, parameters: parameters, encoding: JSONEncoding.default).responseDecodableObject{ (response: DataResponse<T>)  in
-            
-            switch response.result {
-            case .success(_) :
-                
-                success(response)
-                
-                
-            case .failure(let error):
+    func requestApi() {
+        let data = try! FirebaseEncoder().encode(_data)
+
+       // Database.database().reference().child("data").setValue(data)
+        Database.database().reference().child("data").observeSingleEvent(of: .value, with: { (snapshot) in
+            guard let value = snapshot.value else { return }
+            do {
+                self._data = try FirebaseDecoder().decode(data1.self, from: value)
+                debugPrint(self._data)
+                NotificationCenter.default.post(name: getListChatNotiKey, object: nil )
+                NotificationCenter.default.post(name: getChatHistoryNotiKey, object: nil )
+
+            } catch let error {
                 print(error)
-                break
             }
-        }
+        })
+        
+//        let urlString = "https://fir-training-9ffe9.firebaseio.com"
+//        guard let url = URL(string: urlString) else { return }
+//        let requestURL = URLRequest(url: url)
+//        let task = URLSession.shared.dataTask(with: requestURL) { (data, response, error) in
+//            guard error == nil else { return }
+//            guard data != nil else { return }
+//            DispatchQueue.main.async {
+//                self._listChat = try? JSONDecoder().decode(ListChat.self, from: data!)
+//            }
+//        }
+//        task.resume()
+
+        
+        
+        //        Alamofire.request("https://fir-training-9ffe9.firebaseio.com", method: .post, parameters: parameters, encoding: JSONEncoding.default).responseDecodableObject{ (response: DataResponse<T>)  in
+        //
+        //            switch response.result {
+        //            case .success(_) :
+        //
+        //                success(response)
+        //
+        //
+        //            case .failure(let error):
+        //                print(error)
+        //                break
+        //            }
+        //        }
     }
     func getImage(from img_ID: String) -> String {
         let baseUrl = "http://202.32.203.168:9117/api=load_img"
         var urlString = baseUrl
         var parameters: Dictionary<String, String> = [:]
-        parameters["token"] = "\(token)"
         parameters["img_id"] = "\(img_ID)"
         parameters["img_kind"] = "1"
         for (key,value) in parameters {

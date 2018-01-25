@@ -28,6 +28,7 @@
 		5FBB10CC1FDFE68600E7412A /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FBB10CB1FDFE68600E7412A /* DataService.swift */; };
 		5FBB10CE1FDFE71C00E7412A /* Modal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FBB10CD1FDFE71C00E7412A /* Modal.swift */; };
 		5FEB1D081FEA6DDB005ABD4D /* VideoCallManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FEB1D071FEA6DDB005ABD4D /* VideoCallManger.swift */; };
+		5FEED13D201983AC00EA3995 /* CodableFirebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FEED13E201983AC00EA3995 /* CodableFirebase.framework */; };
 		F7B40FEDF9CB616009ED34A4 /* Pods_People.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FCBAE30AD1DBA7CAEE5B512 /* Pods_People.framework */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +57,7 @@
 		5FBB10CB1FDFE68600E7412A /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		5FBB10CD1FDFE71C00E7412A /* Modal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modal.swift; sourceTree = "<group>"; };
 		5FEB1D071FEA6DDB005ABD4D /* VideoCallManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCallManger.swift; sourceTree = "<group>"; };
+		5FEED13E201983AC00EA3995 /* CodableFirebase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CodableFirebase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A84017FF240CD497DD836DBF /* Pods-People.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-People.release.xcconfig"; path = "Pods/Target Support Files/Pods-People/Pods-People.release.xcconfig"; sourceTree = "<group>"; };
 		BE14CE96BF323367FDC03A12 /* Pods-People.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-People.debug.xcconfig"; path = "Pods/Target Support Files/Pods-People/Pods-People.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -65,6 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5FEED13D201983AC00EA3995 /* CodableFirebase.framework in Frameworks */,
 				F7B40FEDF9CB616009ED34A4 /* Pods_People.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -113,6 +116,8 @@
 				5FB635A01FDF75A3005812F3 /* Assets.xcassets */,
 				5F4F0E5520187FFD00A62508 /* GoogleService-Info.plist */,
 				5FB6359D1FDF75A3005812F3 /* Main.storyboard */,
+				5FB635A21FDF75A3005812F3 /* LaunchScreen.storyboard */,
+				5FB635A51FDF75A3005812F3 /* Info.plist */,
 			);
 			path = "Support File";
 			sourceTree = "<group>";
@@ -169,8 +174,6 @@
 				5F1A18C71FEA5F74008ACD30 /* ViewController */,
 				5F1A18C61FEA5F5C008ACD30 /* Support File */,
 				5F1A18C51FEA5F3A008ACD30 /* Modal */,
-				5FB635A21FDF75A3005812F3 /* LaunchScreen.storyboard */,
-				5FB635A51FDF75A3005812F3 /* Info.plist */,
 			);
 			path = People;
 			sourceTree = "<group>";
@@ -187,6 +190,7 @@
 		F5D31DA878750A681A1697CE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5FEED13E201983AC00EA3995 /* CodableFirebase.framework */,
 				3FCBAE30AD1DBA7CAEE5B512 /* Pods_People.framework */,
 			);
 			name = Frameworks;
@@ -498,10 +502,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S63993FAG8;
 				ENABLE_BITCODE = NO;
-				INFOPLIST_FILE = People/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/People/Support File/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = QuocDat.People;
+				PRODUCT_BUNDLE_IDENTIFIER = FireBaseTraining;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -516,10 +520,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S63993FAG8;
 				ENABLE_BITCODE = NO;
-				INFOPLIST_FILE = People/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/People/Support File/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = QuocDat.People;
+				PRODUCT_BUNDLE_IDENTIFIER = FireBaseTraining;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

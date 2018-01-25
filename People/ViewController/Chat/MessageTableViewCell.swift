@@ -18,10 +18,14 @@ class MessageTableViewCell: UITableViewCell {
 
 }
 class SentCell: MessageTableViewCell {
-
+    override func prepareForReuse() {
+        messageText.text = nil
+    }
 }
 
 class ReciveCell: MessageTableViewCell {
-  
+    override func prepareForReuse() {
+        messageText.text = nil
+    }
 
 }

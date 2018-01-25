@@ -12,19 +12,20 @@ import GoogleSignIn
 
 @UIApplicationMain class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     var window: UIWindow?
-
+    let concurrentQueue = DispatchQueue(label: "queuename", attributes: .concurrent)
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
-        var ref: DatabaseReference!
+        let ref: DatabaseReference!
         ref = Database.database().reference()
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
-        GIDSignIn.sharedInstance().delegate = self as! GIDSignInDelegate
+        GIDSignIn.sharedInstance().delegate = self as GIDSignInDelegate
         var currentUser: GIDGoogleUser?
-
+        
         if currentUser?.authentication != nil {
             GIDSignIn.sharedInstance().signIn()
         }
-
+        
         return true
     }
     
@@ -66,11 +67,14 @@ import GoogleSignIn
         let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken, accessToken: authentication.accessToken)
         Auth.auth().signIn(with: credential) { (user, error) in
             if error == nil {
+                self.concurrentQueue.sync {
+                    DataService.shared.requestApi()
+                }
                 let appDelegate = UIApplication.shared.delegate! as! AppDelegate
-                
                 let initialViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainTabbar")
                 appDelegate.window?.rootViewController = initialViewController
                 appDelegate.window?.makeKeyAndVisible()
+                
             }
         }
     }
@@ -80,7 +84,7 @@ import GoogleSignIn
         // Perform any operations when the user disconnects from app here.
         // ...
     }
-
+    
     
 }
 
