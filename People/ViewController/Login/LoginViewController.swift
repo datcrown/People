@@ -30,6 +30,7 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate{
 
     func LoginbuttonAction(sender: GIDSignInButton!) {
         GIDSignIn.sharedInstance().signIn()
+        SignInButton.isEnabled = false
     }
 
 }

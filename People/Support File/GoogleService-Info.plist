@@ -7,9 +7,9 @@
 	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
 	<string>ca-app-pub-3940256099942544/4411468910</string>
 	<key>CLIENT_ID</key>
-	<string>446374069466-l1eolku518je5ofs4ditrfk18uca4iea.apps.googleusercontent.com</string>
+	<string>446374069466-l01sf9426crg2j8qpth3jvi4l7nlv9r6.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.446374069466-l1eolku518je5ofs4ditrfk18uca4iea</string>
+	<string>com.googleusercontent.apps.446374069466-l01sf9426crg2j8qpth3jvi4l7nlv9r6</string>
 	<key>API_KEY</key>
 	<string>AIzaSyC9mJMe_dNGHoCQAkpu4PsNYCoaaYwUlp0</string>
 	<key>GCM_SENDER_ID</key>
@@ -17,7 +17,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>FireBaseTraining</string>
+	<string>com.FireBaseTraining.IOS</string>
 	<key>PROJECT_ID</key>
 	<string>fir-training-9ffe9</string>
 	<key>STORAGE_BUCKET</key>
@@ -33,7 +33,7 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:446374069466:ios:23f835e37a5bc632</string>
+	<string>1:446374069466:ios:a4082a34427ee6d8</string>
 	<key>DATABASE_URL</key>
 	<string>https://fir-training-9ffe9.firebaseio.com</string>
 </dict>

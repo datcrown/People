@@ -9,4 +9,5 @@ target 'People' do
  pod 'Firebase’
  pod 'Firebase/Auth'
  pod 'GoogleSignIn'
+ pod 'Firebase/Messaging'
 end

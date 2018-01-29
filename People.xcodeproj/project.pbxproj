@@ -9,14 +9,13 @@
 /* Begin PBXBuildFile section */
 		5F1A18C21FEA520B008ACD30 /* CallInComingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F1A18C11FEA520B008ACD30 /* CallInComingViewController.swift */; };
 		5F3D815F1FDFBF16004CC1F7 /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F3D815E1FDFBF16004CC1F7 /* MessageTableViewCell.swift */; };
-		5F4F0E5620187FFD00A62508 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5F4F0E5520187FFD00A62508 /* GoogleService-Info.plist */; };
 		5F4F0E58201881B200A62508 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4F0E57201881B200A62508 /* LoginViewController.swift */; };
 		5F5A6A821FE36A9200020FF0 /* BubbleChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5A6A811FE36A9200020FF0 /* BubbleChat.swift */; };
-		5F5C42F21FE8C57D00DE777D /* NewsFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5C42F11FE8C57D00DE777D /* NewsFeedViewController.swift */; };
-		5F5C42F61FE8CD1F00DE777D /* NewsFeedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5C42F51FE8CD1F00DE777D /* NewsFeedCollectionViewCell.swift */; };
 		5F5C42F81FE8F46200DE777D /* VideoCallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5C42F71FE8F46200DE777D /* VideoCallViewController.swift */; };
-		5F6D04441FE1117600BE7965 /* Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6D04431FE1117600BE7965 /* Extention.swift */; };
-		5FA0D0971FE79C1700A04C92 /* ChatManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA0D0961FE79C1700A04C92 /* ChatManager.swift */; };
+		5F646468201F2CD100A0E077 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5F646467201F2CD100A0E077 /* GoogleService-Info.plist */; };
+		5F930953201F1D12005046F8 /* Pods_People.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3FCBAE30AD1DBA7CAEE5B512 /* Pods_People.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5F930955201F1D16005046F8 /* CodableFirebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FEED13E201983AC00EA3995 /* CodableFirebase.framework */; };
+		5F930956201F1D16005046F8 /* CodableFirebase.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5FEED13E201983AC00EA3995 /* CodableFirebase.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5FB6359A1FDF75A3005812F3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB635991FDF75A3005812F3 /* AppDelegate.swift */; };
 		5FB6359C1FDF75A3005812F3 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB6359B1FDF75A3005812F3 /* MessageViewController.swift */; };
 		5FB6359F1FDF75A3005812F3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FB6359D1FDF75A3005812F3 /* Main.storyboard */; };
@@ -28,22 +27,33 @@
 		5FBB10CC1FDFE68600E7412A /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FBB10CB1FDFE68600E7412A /* DataService.swift */; };
 		5FBB10CE1FDFE71C00E7412A /* Modal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FBB10CD1FDFE71C00E7412A /* Modal.swift */; };
 		5FEB1D081FEA6DDB005ABD4D /* VideoCallManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FEB1D071FEA6DDB005ABD4D /* VideoCallManger.swift */; };
-		5FEED13D201983AC00EA3995 /* CodableFirebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FEED13E201983AC00EA3995 /* CodableFirebase.framework */; };
 		F7B40FEDF9CB616009ED34A4 /* Pods_People.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FCBAE30AD1DBA7CAEE5B512 /* Pods_People.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		5F930954201F1D12005046F8 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				5F930956201F1D16005046F8 /* CodableFirebase.framework in Embed Frameworks */,
+				5F930953201F1D12005046F8 /* Pods_People.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		3FCBAE30AD1DBA7CAEE5B512 /* Pods_People.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_People.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F1A18C11FEA520B008ACD30 /* CallInComingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallInComingViewController.swift; sourceTree = "<group>"; };
 		5F3D815E1FDFBF16004CC1F7 /* MessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
-		5F4F0E5520187FFD00A62508 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		5F4696DE201F283100DF891E /* People.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = People.entitlements; sourceTree = "<group>"; };
 		5F4F0E57201881B200A62508 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		5F5A6A811FE36A9200020FF0 /* BubbleChat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleChat.swift; sourceTree = "<group>"; };
-		5F5C42F11FE8C57D00DE777D /* NewsFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeedViewController.swift; sourceTree = "<group>"; };
-		5F5C42F51FE8CD1F00DE777D /* NewsFeedCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeedCollectionViewCell.swift; sourceTree = "<group>"; };
 		5F5C42F71FE8F46200DE777D /* VideoCallViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCallViewController.swift; sourceTree = "<group>"; };
-		5F6D04431FE1117600BE7965 /* Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extention.swift; sourceTree = "<group>"; };
-		5FA0D0961FE79C1700A04C92 /* ChatManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatManager.swift; sourceTree = "<group>"; };
+		5F646467201F2CD100A0E077 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5FB635961FDF75A3005812F3 /* People.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = People.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FB635991FDF75A3005812F3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5FB6359B1FDF75A3005812F3 /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
@@ -67,7 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5FEED13D201983AC00EA3995 /* CodableFirebase.framework in Frameworks */,
+				5F930955201F1D16005046F8 /* CodableFirebase.framework in Frameworks */,
 				F7B40FEDF9CB616009ED34A4 /* Pods_People.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -101,7 +111,6 @@
 			children = (
 				5FBB10CD1FDFE71C00E7412A /* Modal.swift */,
 				5FBB10CB1FDFE68600E7412A /* DataService.swift */,
-				5FA0D0961FE79C1700A04C92 /* ChatManager.swift */,
 			);
 			path = Modal;
 			sourceTree = "<group>";
@@ -112,10 +121,9 @@
 				5FB635AB1FDF7F3A005812F3 /* CustomView.swift */,
 				5F5A6A811FE36A9200020FF0 /* BubbleChat.swift */,
 				5FB635991FDF75A3005812F3 /* AppDelegate.swift */,
-				5F6D04431FE1117600BE7965 /* Extention.swift */,
 				5FB635A01FDF75A3005812F3 /* Assets.xcassets */,
-				5F4F0E5520187FFD00A62508 /* GoogleService-Info.plist */,
 				5FB6359D1FDF75A3005812F3 /* Main.storyboard */,
+				5F646467201F2CD100A0E077 /* GoogleService-Info.plist */,
 				5FB635A21FDF75A3005812F3 /* LaunchScreen.storyboard */,
 				5FB635A51FDF75A3005812F3 /* Info.plist */,
 			);
@@ -126,20 +134,10 @@
 			isa = PBXGroup;
 			children = (
 				5F4F0E59201881C000A62508 /* Login */,
-				5F1A18C81FEA5FAD008ACD30 /* TimeLine */,
 				5F1A18C31FEA5E2B008ACD30 /* Video Call */,
 				5F1A18C41FEA5EDE008ACD30 /* Chat */,
 			);
 			path = ViewController;
-			sourceTree = "<group>";
-		};
-		5F1A18C81FEA5FAD008ACD30 /* TimeLine */ = {
-			isa = PBXGroup;
-			children = (
-				5F5C42F11FE8C57D00DE777D /* NewsFeedViewController.swift */,
-				5F5C42F51FE8CD1F00DE777D /* NewsFeedCollectionViewCell.swift */,
-			);
-			path = TimeLine;
 			sourceTree = "<group>";
 		};
 		5F4F0E59201881C000A62508 /* Login */ = {
@@ -171,6 +169,7 @@
 		5FB635981FDF75A3005812F3 /* People */ = {
 			isa = PBXGroup;
 			children = (
+				5F4696DE201F283100DF891E /* People.entitlements */,
 				5F1A18C71FEA5F74008ACD30 /* ViewController */,
 				5F1A18C61FEA5F5C008ACD30 /* Support File */,
 				5F1A18C51FEA5F3A008ACD30 /* Modal */,
@@ -209,6 +208,7 @@
 				5FB635941FDF75A3005812F3 /* Resources */,
 				F43477C0543C8E92FE4A355C /* [CP] Embed Pods Frameworks */,
 				A828FA02E473130DD5F46A85 /* [CP] Copy Pods Resources */,
+				5F930954201F1D12005046F8 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -232,6 +232,17 @@
 					5FB635951FDF75A3005812F3 = {
 						CreatedOnToolsVersion = 9.1;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -259,9 +270,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				5FB635A41FDF75A3005812F3 /* LaunchScreen.storyboard in Resources */,
-				5F4F0E5620187FFD00A62508 /* GoogleService-Info.plist in Resources */,
 				5FB635A11FDF75A3005812F3 /* Assets.xcassets in Resources */,
 				5FB6359F1FDF75A3005812F3 /* Main.storyboard in Resources */,
+				5F646468201F2CD100A0E077 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,6 +329,7 @@
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/KMPlaceholderTextView/KMPlaceholderTextView.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -330,6 +342,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KMPlaceholderTextView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -347,7 +360,6 @@
 			files = (
 				5FB635B01FDF808E005812F3 /* PeopleTableViewCell.swift in Sources */,
 				5FBB10CC1FDFE68600E7412A /* DataService.swift in Sources */,
-				5FA0D0971FE79C1700A04C92 /* ChatManager.swift in Sources */,
 				5FB635AC1FDF7F3A005812F3 /* CustomView.swift in Sources */,
 				5F5A6A821FE36A9200020FF0 /* BubbleChat.swift in Sources */,
 				5FBB10CE1FDFE71C00E7412A /* Modal.swift in Sources */,
@@ -355,13 +367,10 @@
 				5FB635AE1FDF8077005812F3 /* PeopleTableViewController.swift in Sources */,
 				5F5C42F81FE8F46200DE777D /* VideoCallViewController.swift in Sources */,
 				5FB6359A1FDF75A3005812F3 /* AppDelegate.swift in Sources */,
-				5F6D04441FE1117600BE7965 /* Extention.swift in Sources */,
-				5F5C42F61FE8CD1F00DE777D /* NewsFeedCollectionViewCell.swift in Sources */,
 				5F3D815F1FDFBF16004CC1F7 /* MessageTableViewCell.swift in Sources */,
 				5F4F0E58201881B200A62508 /* LoginViewController.swift in Sources */,
 				5FEB1D081FEA6DDB005ABD4D /* VideoCallManger.swift in Sources */,
 				5F1A18C21FEA520B008ACD30 /* CallInComingViewController.swift in Sources */,
-				5F5C42F21FE8C57D00DE777D /* NewsFeedViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -499,13 +508,14 @@
 			baseConfigurationReference = BE14CE96BF323367FDC03A12 /* Pods-People.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = People/People.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = S63993FAG8;
+				DEVELOPMENT_TEAM = 6247BHSB6J;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "$(SRCROOT)/People/Support File/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = FireBaseTraining;
+				PRODUCT_BUNDLE_IDENTIFIER = com.FireBaseTraining.IOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -517,13 +527,14 @@
 			baseConfigurationReference = A84017FF240CD497DD836DBF /* Pods-People.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = People/People.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = S63993FAG8;
+				DEVELOPMENT_TEAM = 6247BHSB6J;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "$(SRCROOT)/People/Support File/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = FireBaseTraining;
+				PRODUCT_BUNDLE_IDENTIFIER = com.FireBaseTraining.IOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
