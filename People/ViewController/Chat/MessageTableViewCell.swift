@@ -11,6 +11,8 @@ import UIKit
 class MessageTableViewCell: UITableViewCell {
 //    @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var messageText: UITextView!
+    @IBOutlet weak var senderNameLB: UILabel!
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -27,5 +29,5 @@ class ReciveCell: MessageTableViewCell {
     override func prepareForReuse() {
         messageText.text = nil
     }
-
+    
 }

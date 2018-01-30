@@ -21,8 +21,8 @@ class DataService {
     var indexOfPeople: Int?
     var channelRef: DatabaseReference?
     var refHandle:  UInt!
-     var newMessageRefHandle: DatabaseHandle?
-     var updatedMessageRefHandle: DatabaseHandle?
+    var newMessageRefHandle: DatabaseHandle?
+    var updatedMessageRefHandle: DatabaseHandle?
     
     
     private var channelRefHandle: DatabaseHandle?
@@ -71,13 +71,6 @@ class DataService {
                 self._messages.append(Message(senderID: id, senderName: name, content: text))
                 NotificationCenter.default.post(name: getChatHistoryNotiKey, object: nil)
             }
-        })
-        
-        updatedMessageRefHandle = messageRef.observe(.childChanged, with: { (snapshot) in
-            let key = snapshot.key
-            let messageData = snapshot.value as! Dictionary<String, String>
-     
-            
         })
     }
 

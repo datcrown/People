@@ -26,7 +26,6 @@
 		5FB635B01FDF808E005812F3 /* PeopleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB635AF1FDF808E005812F3 /* PeopleTableViewCell.swift */; };
 		5FBB10CC1FDFE68600E7412A /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FBB10CB1FDFE68600E7412A /* DataService.swift */; };
 		5FBB10CE1FDFE71C00E7412A /* Modal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FBB10CD1FDFE71C00E7412A /* Modal.swift */; };
-		5FEB1D081FEA6DDB005ABD4D /* VideoCallManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FEB1D071FEA6DDB005ABD4D /* VideoCallManger.swift */; };
 		F7B40FEDF9CB616009ED34A4 /* Pods_People.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FCBAE30AD1DBA7CAEE5B512 /* Pods_People.framework */; };
 /* End PBXBuildFile section */
 
@@ -66,7 +65,6 @@
 		5FB635AF1FDF808E005812F3 /* PeopleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleTableViewCell.swift; sourceTree = "<group>"; };
 		5FBB10CB1FDFE68600E7412A /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		5FBB10CD1FDFE71C00E7412A /* Modal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modal.swift; sourceTree = "<group>"; };
-		5FEB1D071FEA6DDB005ABD4D /* VideoCallManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCallManger.swift; sourceTree = "<group>"; };
 		5FEED13E201983AC00EA3995 /* CodableFirebase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CodableFirebase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A84017FF240CD497DD836DBF /* Pods-People.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-People.release.xcconfig"; path = "Pods/Target Support Files/Pods-People/Pods-People.release.xcconfig"; sourceTree = "<group>"; };
 		BE14CE96BF323367FDC03A12 /* Pods-People.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-People.debug.xcconfig"; path = "Pods/Target Support Files/Pods-People/Pods-People.debug.xcconfig"; sourceTree = "<group>"; };
@@ -90,7 +88,6 @@
 			children = (
 				5F1A18C11FEA520B008ACD30 /* CallInComingViewController.swift */,
 				5F5C42F71FE8F46200DE777D /* VideoCallViewController.swift */,
-				5FEB1D071FEA6DDB005ABD4D /* VideoCallManger.swift */,
 			);
 			path = "Video Call";
 			sourceTree = "<group>";
@@ -369,7 +366,6 @@
 				5FB6359A1FDF75A3005812F3 /* AppDelegate.swift in Sources */,
 				5F3D815F1FDFBF16004CC1F7 /* MessageTableViewCell.swift in Sources */,
 				5F4F0E58201881B200A62508 /* LoginViewController.swift in Sources */,
-				5FEB1D081FEA6DDB005ABD4D /* VideoCallManger.swift in Sources */,
 				5F1A18C21FEA520B008ACD30 /* CallInComingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

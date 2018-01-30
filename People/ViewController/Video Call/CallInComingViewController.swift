@@ -17,9 +17,6 @@ class CallInComingViewController: UIViewController {
     var photoOutput : AVCapturePhotoOutput?
     var cameraPreviewLayer: AVCaptureVideoPreviewLayer?
     @IBOutlet weak var switchCameraBt: UIButton!
-    
-    
-    
     @IBAction func switchCamera(_ sender: UIButton) {
         switchCameraBt.isEnabled = false
         //Change camera source

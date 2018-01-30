@@ -182,11 +182,11 @@
                                 <rect key="frame" x="0.0" y="64" width="414" height="573"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="reciveCell" rowHeight="60" id="TvJ-eh-mo6" customClass="ReciveCell" customModule="People" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="60"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="reciveCell" rowHeight="80" id="TvJ-eh-mo6" customClass="ReciveCell" customModule="People" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TvJ-eh-mo6" id="G1J-aZ-tOx">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Nl4-py-KGf">
@@ -204,20 +204,30 @@
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </textView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gjx-Ze-fua">
+                                                    <rect key="frame" x="15" y="60" width="224" height="18"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="gjx-Ze-fua" firstAttribute="leading" secondItem="G1J-aZ-tOx" secondAttribute="leading" constant="15" id="5F8-vx-IzI"/>
+                                                <constraint firstAttribute="trailing" secondItem="gjx-Ze-fua" secondAttribute="trailing" constant="175" id="8rM-r9-TbX"/>
                                                 <constraint firstItem="Nl4-py-KGf" firstAttribute="leading" secondItem="G1J-aZ-tOx" secondAttribute="leading" constant="15" id="LTi-1y-IKc"/>
                                                 <constraint firstItem="Nl4-py-KGf" firstAttribute="top" secondItem="G1J-aZ-tOx" secondAttribute="top" constant="5" id="MI0-tQ-jrq"/>
                                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Nl4-py-KGf" secondAttribute="trailing" constant="150" id="agL-BQ-TKf"/>
-                                                <constraint firstAttribute="bottom" secondItem="Nl4-py-KGf" secondAttribute="bottom" constant="5" id="biU-u8-xh3"/>
+                                                <constraint firstAttribute="bottom" secondItem="Nl4-py-KGf" secondAttribute="bottom" constant="25" id="biU-u8-xh3"/>
+                                                <constraint firstItem="gjx-Ze-fua" firstAttribute="top" secondItem="Nl4-py-KGf" secondAttribute="bottom" constant="5" id="ft6-gE-hI6"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="messageText" destination="Nl4-py-KGf" id="JNY-hB-JsD"/>
+                                            <outlet property="senderNameLB" destination="gjx-Ze-fua" id="Yvj-oR-kpO"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="sentCell" rowHeight="60" id="ILF-87-n3V" customClass="SentCell" customModule="People" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="88" width="414" height="60"/>
+                                        <rect key="frame" x="0.0" y="108" width="414" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ILF-87-n3V" id="cFF-Gw-Syy">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>

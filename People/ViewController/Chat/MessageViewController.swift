@@ -32,8 +32,11 @@ class MessageViewController: UIViewController,UITextViewDelegate, UITableViewDat
         NotificationCenter.default.addObserver(self, selector: #selector(updateData), name: getChatHistoryNotiKey, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardNotification), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardNotification), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
-        //   navigationItem.title SADASD= DataService.shared.messages[DataService.shared.indexOfPeople!]?
         
+        
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        chatHistory.removeAll()
     }
     
     func scrollToLastMessage() {
@@ -66,6 +69,7 @@ class MessageViewController: UIViewController,UITextViewDelegate, UITableViewDat
         textField.resignFirstResponder()
         return true
     }
+    
     // MARK: - TBV DataSource
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableViewAutomaticDimension
@@ -84,20 +88,25 @@ class MessageViewController: UIViewController,UITextViewDelegate, UITableViewDat
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-            let cellIdentifier = chatHistory[indexPath.row].senderName == Auth.auth().currentUser?.displayName ? "sentCell" : "reciveCell"
-            let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! MessageTableViewCell
-            cell.messageText.text = chatHistory[indexPath.row].content
-
-            return cell
+        let cellIdentifier = chatHistory[indexPath.row].senderName == Auth.auth().currentUser?.displayName ? "sentCell" : "reciveCell"
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! MessageTableViewCell
+        cell.messageText.text = chatHistory[indexPath.row].content
+        if cellIdentifier == "reciveCell" {
+            cell.senderNameLB.text = chatHistory[indexPath.row].senderName
         }
-       
+        return cell
+        
+    }
+    
     
     
     @objc func updateData() {
         chatHistory = DataService.shared.messages
         tableView.reloadData()
+        navigationItem.title = DataService.shared.channels[DataService.shared.indexOfPeople!].name
         scrollToLastMessage()
     }
+    
     @IBAction func sendMessage(sender: UIButton) {
         if messageTextView.text != "" {
             let itemRef = messageRef.childByAutoId()
@@ -117,13 +126,11 @@ class MessageViewController: UIViewController,UITextViewDelegate, UITableViewDat
             messageRef.removeObserver(withHandle: refHandle)
         }
         if let refUpdateHandle = DataService.shared.updatedMessageRefHandle {
-              messageRef.removeObserver(withHandle: refUpdateHandle)
+            messageRef.removeObserver(withHandle: refUpdateHandle)
         }
         NotificationCenter.default.removeObserver(self)
     }
-    override func viewWillDisappear(_ animated: Bool) {
-        chatHistory.removeAll()
-    }
-
+    
+    
 }
 

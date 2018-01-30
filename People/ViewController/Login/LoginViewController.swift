@@ -15,11 +15,7 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate{
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        SignInButton = GIDSignInButton(frame: CGRect(x: 0, y: 0, width: 230, height: 48))
-        SignInButton.center = view.center
-        SignInButton.style = GIDSignInButtonStyle.standard
-        view.addSubview(SignInButton)
-        GIDSignIn.sharedInstance().uiDelegate = self
+        creatLoginButton()
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,4 +29,11 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate{
         SignInButton.isEnabled = false
     }
 
+    func creatLoginButton() {
+        SignInButton = GIDSignInButton(frame: CGRect(x: 0, y: 0, width: 230, height: 48))
+        SignInButton.center = view.center
+        SignInButton.style = GIDSignInButtonStyle.standard
+        view.addSubview(SignInButton)
+        GIDSignIn.sharedInstance().uiDelegate = self
+    }
 }

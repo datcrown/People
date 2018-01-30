@@ -19,18 +19,14 @@
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-        
-        // Uncomment the following line to display an Edit button in the navigatvar bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
-        
         NotificationCenter.default.addObserver(self, selector: #selector(updateData), name: getListChatNotiKey, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(updateData), name: getAvaImageNotiKey, object: nil)
     }
-    func observeRoom() {
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        DataService.shared.indexOfPeople = tableView.indexPathForSelectedRow?.row
     }
+
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -68,10 +64,7 @@
         tableView.reloadData()
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        DataService.shared.indexOfPeople = tableView.indexPathForSelectedRow?.row
-    }
-    
+
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
             let channel = DataService.shared.channels[indexPath.row]
             self.performSegue(withIdentifier: "ShowChannel", sender: channel)
@@ -82,7 +75,7 @@
 
         if let channel = sender as? Channel {
             let chatVc = segue.destination as! MessageViewController
-            
+
             chatVc.senderDisplayName = Auth.auth().currentUser?.displayName
             chatVc.channel = channel
             chatVc.channelRef = roomRef.child(channel.id!)
@@ -109,16 +102,13 @@
     func creatNewChatRoom(roomName: String) {
         
         let newRoomRef =  roomRef.childByAutoId()
-        let newBookId = newRoomRef.key
-        let newRoomData = [
-            "name": roomName
-            ] as [String : Any]
+        let newRoomData = [ "name": roomName ] as [String : Any]
         newRoomRef.setValue(newRoomData)
         var newRoom: Channel?
         newRoom?.name = roomName
         newRoomRefHandle = roomRef.observe(.childAdded, with: { (snapshot) -> Void in
             let roomData = snapshot.value as! Dictionary<String, AnyObject>
-            if let roomName = roomData["room_name"] as! String! {
+            if (roomData["room_name"] as? String) != nil {
                 DataService.shared.channels.append(newRoom!)
                 self.tableView.insertRows(at: [IndexPath(row: (DataService.shared.channels.count)-1, section: 0)], with: UITableViewRowAnimation.automatic)
                 self.tableView.reloadData()
@@ -140,6 +130,16 @@
         let controller = storyboard.instantiateViewController(withIdentifier: "LoginVC")
         self.present(controller, animated: true, completion: nil)
 
+    }
+    
+    
+    deinit {
+        if let refHandle = DataService.shared.channelRef {
+            DataService.shared.roomRef.removeAllObservers()
+            refHandle.removeAllObservers()
+        }
+        roomRef.removeAllObservers()
+        NotificationCenter.default.removeObserver(self)
     }
     
  }
