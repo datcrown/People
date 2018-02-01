@@ -25,7 +25,7 @@ class CallInComingViewController: UIViewController {
         session.beginConfiguration()
         
         //Remove existing input
-        let currentCameraInput:AVCaptureInput = session.inputs.first as! AVCaptureInput
+        let currentCameraInput:AVCaptureInput = session.inputs.first!
         ;            session.removeInput(currentCameraInput)
         
         //Get new input

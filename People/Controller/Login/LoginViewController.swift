@@ -9,31 +9,32 @@
 import UIKit
 import Firebase
 import GoogleSignIn
+import LocalAuthentication
 
-class LoginViewController: UIViewController, GIDSignInUIDelegate{
+class LoginViewController: UIViewController {
     var SignInButton : GIDSignInButton!
-
     override func viewDidLoad() {
         super.viewDidLoad()
         creatLoginButton()
+        SignInButton.isEnabled = true
+        view.addSubview(SignInButton)
     }
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
-    func LoginbuttonAction(sender: GIDSignInButton!) {
-        GIDSignIn.sharedInstance().signIn()
-        SignInButton.isEnabled = false
-    }
-
+}
+extension LoginViewController: GIDSignInUIDelegate {
     func creatLoginButton() {
         SignInButton = GIDSignInButton(frame: CGRect(x: 0, y: 0, width: 230, height: 48))
         SignInButton.center = view.center
         SignInButton.style = GIDSignInButtonStyle.standard
-        view.addSubview(SignInButton)
         GIDSignIn.sharedInstance().uiDelegate = self
+    }
+    
+    func LoginbuttonAction(sender: GIDSignInButton!) {
+        GIDSignIn.sharedInstance().signIn()
+        SignInButton.isEnabled = false
     }
 }

@@ -20,6 +20,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="J7M-1m-yDI">
+                            <rect key="frame" x="0.0" y="93" width="414" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="cell" rowHeight="65" id="a0A-5n-mp7" customClass="PeopleTableViewCell" customModule="People" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="65"/>
@@ -51,7 +56,6 @@
                                             <rect key="frame" x="84" y="11" width="0.0" height="22"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" relation="lessThanOrEqual" constant="150" id="eDV-Tf-Jpe"/>
-                                                <constraint firstAttribute="height" constant="22" id="gSa-CR-v50"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -205,7 +209,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </textView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gjx-Ze-fua">
-                                                    <rect key="frame" x="15" y="60" width="224" height="18"/>
+                                                    <rect key="frame" x="15.000000000000004" y="60" width="40.333333333333343" height="18"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -213,7 +217,7 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="gjx-Ze-fua" firstAttribute="leading" secondItem="G1J-aZ-tOx" secondAttribute="leading" constant="15" id="5F8-vx-IzI"/>
-                                                <constraint firstAttribute="trailing" secondItem="gjx-Ze-fua" secondAttribute="trailing" constant="175" id="8rM-r9-TbX"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="gjx-Ze-fua" secondAttribute="trailing" id="8rM-r9-TbX"/>
                                                 <constraint firstItem="Nl4-py-KGf" firstAttribute="leading" secondItem="G1J-aZ-tOx" secondAttribute="leading" constant="15" id="LTi-1y-IKc"/>
                                                 <constraint firstItem="Nl4-py-KGf" firstAttribute="top" secondItem="G1J-aZ-tOx" secondAttribute="top" constant="5" id="MI0-tQ-jrq"/>
                                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Nl4-py-KGf" secondAttribute="trailing" constant="150" id="agL-BQ-TKf"/>
@@ -248,6 +252,10 @@
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </textView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7Mm-Ee-ZlG">
+                                                    <rect key="frame" x="258" y="5" width="50" height="50"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="hjy-50-npm" secondAttribute="trailing" constant="15" id="Bw7-CE-zyt"/>
@@ -259,6 +267,14 @@
                                         <connections>
                                             <outlet property="messageText" destination="hjy-50-npm" id="KMq-S3-LXQ"/>
                                         </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="194" id="bq6-Sm-wIJ">
+                                        <rect key="frame" x="0.0" y="168" width="414" height="194"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bq6-Sm-wIJ" id="AoP-PK-j5e">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="194"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
